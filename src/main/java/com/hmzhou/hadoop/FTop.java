@@ -1,7 +1,7 @@
 package com.hmzhou.hadoop;
 
 import com.hmzhou.hadoop.mapper.FTopMapper;
-import com.hmzhou.hadoop.reducer.TopReducer;
+import com.hmzhou.hadoop.reducer.FTopReducer;
 import com.hmzhou.hadoop.utils.FileUtil;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -21,7 +21,7 @@ public class FTop {
 
     private static String inPath = "/data/ftop/input/ftop.txt";
 
-    private static String outPath = "/matrix/output";
+    private static String outPath = "/data/ftop/output";
 
     private static String hdsf = "hdfs://master:9000";
 
@@ -39,7 +39,7 @@ public class FTop {
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
 
-        job.setReducerClass(TopReducer.class);
+        job.setReducerClass(FTopReducer.class);
 
         // configuration
         Path inputPath = new Path(inPath);

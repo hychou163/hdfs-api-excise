@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * Created by hyjoy on 2018/12/1.
  */
-public class TopReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
+public class FTopReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
     private IntWritable mValue = new IntWritable();
 
